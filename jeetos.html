@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeetos - Cheese With Swagger</title>
+  <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Luckiest Guy', cursive;
+      background: linear-gradient(to bottom, #ff9900, #ffd966);
+      overflow-x: hidden;
+    }
+    header {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      color: white;
+      font-size: 3rem;
+      text-shadow: 2px 2px #000;
+    }
+    .hero {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: relative;
+    }
+    .jeetos-bag {
+      max-width: 300px;
+      animation: float 3s ease-in-out infinite;
+      z-index: 2;
+    }
+    .frog {
+      position: absolute;
+      bottom: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      animation: wave 2s ease-in-out 1s 1 forwards;
+      z-index: 1;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    @keyframes wave {
+      0% { transform: translateX(-50%) rotate(0deg); }
+      50% { transform: translateX(-50%) rotate(15deg); }
+      100% { transform: translateX(-50%) rotate(0deg); }
+    }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+      color: #fff;
+    }
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .flavors {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+    .flavor-card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 1rem;
+      padding: 1rem;
+      width: 200px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .flavor-card:hover {
+      transform: scale(1.05);
+    }
+    .socials {
+      font-size: 1.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+      color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .socials a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 0.5rem 0;
+    }
+    .socials a:hover {
+      text-decoration: underline;
+    }
+    .cheese-puff {
+      position: absolute;
+      width: 40px;
+      animation: fall 8s linear infinite;
+      opacity: 0.8;
+      z-index: 0;
+    }
+    @keyframes fall {
+      from { top: -50px; }
+      to { top: 110%; }
+    }
+  </style>
+</head>
+<body>
+  <header>Jeetos - Cheese With Swagger</header>
+  <div class="hero">
+    <img src="/jeetos.png" alt="Jeetos Bag" class="jeetos-bag" />
+    <img src="/jeetos.png" alt="Pepe Waving" class="frog" />
+  </div>
+  <section class="section" id="about">
+    <h2>About Jeetos</h2>
+    <p>Born from a blend of meme culture and crunchy cravings, Jeetos brings cheesy joy with a twist. Our mascot is bold. Our snacks are bolder.</p>
+  </section>
+  <section class="section" id="flavors">
+    <h2>Flavors</h2>
+    <div class="flavors">
+      <div class="flavor-card">Original Cheese Blast</div>
+      <div class="flavor-card">Spicy Meme Crunch</div>
+      <div class="flavor-card">Tangy Toad Tango</div>
+      <div class="flavor-card">Froggo Fireball</div>
+    </div>
+  </section>
+  <section class="section" id="token">
+    <h2>Coin Info</h2>
+    <div class="socials">
+      <p><strong>Contract Address (CA):</strong><br> 0x1234abcd5678ef90123456789abcdef012345678</p>
+      <a href="https://twitter.com/jeetoscoin" target="_blank">🐦 Twitter</a>
+      <a href="https://t.me/jeetoscoin" target="_blank">💬 Telegram</a>
+      <a href="https://dexscreener.com/solana/jeetos" target="_blank">📈 DexScreener</a>
+      <a href="https://pump.fun/jeetos" target="_blank">💥 pump.fun</a>
+    </div>
+  </section>
+
+  <!-- Floating Cheese Puffs -->
+  <script>
+    const puffSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Cheetos.jpg/120px-Cheetos.jpg';
+    for (let i = 0; i < 10; i++) {
+      const puff = document.createElement('img');
+      puff.src = puffSrc;
+      puff.className = 'cheese-puff';
+      puff.style.left = Math.random() * 100 + 'vw';
+      puff.style.animationDuration = 4 + Math.random() * 6 + 's';
+      puff.style.top = Math.random() * -100 + 'px';
+      document.body.appendChild(puff);
+    }
+  </script>
+</body>
+</html>
